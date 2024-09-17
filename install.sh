@@ -1,0 +1,1 @@
+cd server && bun install && cd ../client && bun install
