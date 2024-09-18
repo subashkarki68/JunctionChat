@@ -7,8 +7,7 @@
     "start": "NODE_ENV=production bun dist/index.js",
     "test": "bun test",
     "seed": "node ./src/scripts/seed.js",
-    "pretty": "prettier --write .",
-    "prepare": "husky"
+    "pretty": "prettier --write ."
   },
   "dependencies": {
     "@elysiajs/swagger": "^1.1.1",
@@ -17,7 +16,6 @@
   },
   "devDependencies": {
     "bun-types": "latest",
-    "husky": "^9.1.6",
     "prettier": "^3.3.3"
   },
   "module": "src/index.js"
