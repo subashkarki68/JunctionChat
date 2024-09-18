@@ -1,6 +1,6 @@
-import { swagger } from "@elysiajs/swagger";
-import { Elysia } from "elysia";
-import routes from "./routes";
+import { swagger } from '@elysiajs/swagger';
+import { Elysia } from 'elysia';
+import routes from './routes';
 
 const app = new Elysia();
 

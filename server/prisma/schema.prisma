@@ -11,6 +11,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  // url      = "postgresql://postgres:hellosubash@localhost:5432/postgres?schema=public"
 }
 
 model User {

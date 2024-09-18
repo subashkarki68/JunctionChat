@@ -5,7 +5,9 @@
     "dev": "bun --watch src/index.ts",
     "build": "bun build src/index.ts --target bun --outdir ./dist",
     "start": "NODE_ENV=production bun dist/index.js",
-    "test": "bun test"
+    "test": "bun test",
+    "seed": "node ./src/scripts/seed.js",
+    "pretty": "prettier --write ."
   },
   "dependencies": {
     "@elysiajs/swagger": "^1.1.1",
@@ -13,7 +15,8 @@
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prettier": "^3.3.3"
   },
   "module": "src/index.js"
 }
