@@ -10,7 +10,8 @@
     "clean": "rm -rf dist && echo 'Done.'",
     "lint": "eslint .",
     "preview": "vite preview",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -25,9 +26,9 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1",
-    "prettier": "^3.3.3"
+    "vite": "^5.4.1"
   }
 }

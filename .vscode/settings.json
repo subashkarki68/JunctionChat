@@ -1,12 +1,8 @@
 {
-    "cSpell.words": [
-        "datasource",
-        "Elysia",
-        "elysiajs"
-    ],
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit",
-        "source.fixAll": "explicit",
-        "source.sortImports": "explicit"
-    }
+  "cSpell.words": ["datasource", "Elysia", "elysiajs", "precommit"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.sortImports": "explicit"
+  }
 }

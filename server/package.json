@@ -7,7 +7,8 @@
     "start": "NODE_ENV=production bun dist/index.js",
     "test": "bun test",
     "seed": "node ./src/scripts/seed.js",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@elysiajs/swagger": "^1.1.1",

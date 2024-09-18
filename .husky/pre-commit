@@ -1,1 +1,1 @@
-bun run pretty
+bunx lint-staged
