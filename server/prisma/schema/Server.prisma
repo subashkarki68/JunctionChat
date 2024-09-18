@@ -1,0 +1,9 @@
+model Server {
+    id        Int      @id @default(autoincrement())
+    name      String
+    createdAt DateTime @default(now())
+
+    channels    Channel[]
+    memberships Membership[]
+    roles       Role[]
+}

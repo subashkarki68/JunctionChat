@@ -1,0 +1,9 @@
+model Reaction {
+    id        Int    @id @default(autoincrement())
+    emoji     String // Emoji code (e.g., ":smile:")
+    userId    Int
+    messageId Int
+
+    user    User    @relation(fields: [userId], references: [id])
+    message Message @relation(fields: [messageId], references: [id])
+}

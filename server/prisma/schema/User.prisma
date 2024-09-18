@@ -1,0 +1,19 @@
+model User {
+    id        Int      @id @default(autoincrement())
+    username  String   @unique
+    email     String   @unique
+    password  String
+    avatarUrl String? // Optional avatar for users
+    createdAt DateTime @default(now())
+
+    memberships      Membership[]
+    roles            RoleAssignment[]
+    messages         Message[]
+    reactions        Reaction[]
+    directChats      DirectMessage[]
+    sentMessages     DirectMessage[]  @relation("SentMessages")
+    receivedMessages DirectMessage[]  @relation("ReceivedMessages")
+    Channel          Channel?         @relation(fields: [channelId], references: [id])
+    channels         Channel[]        @relation("ChannelAccess")
+    channelId        Int?
+}

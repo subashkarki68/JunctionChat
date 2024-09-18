@@ -1,0 +1,15 @@
+model Channel {
+    id        Int      @id @default(autoincrement())
+    name      String
+    serverId  Int
+    isPrivate Boolean  @default(false) // Public or private channel
+    createdAt DateTime @default(now())
+
+    server   Server    @relation(fields: [serverId], references: [id])
+    messages Message[]
+
+    // Optional: Users and Roles that can access private channels
+    allowedUsers User[] @relation("ChannelAccess")
+    allowedRoles Role[] @relation("RoleChannelAccess")
+    User         User[]
+}

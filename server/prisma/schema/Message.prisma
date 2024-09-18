@@ -1,0 +1,15 @@
+model Message {
+    id        Int      @id @default(autoincrement())
+    content   String
+    createdAt DateTime @default(now())
+
+    userId       Int
+    channelId    Int?
+    directChatId Int? // For direct messages
+
+    user       User           @relation(fields: [userId], references: [id])
+    channel    Channel?       @relation(fields: [channelId], references: [id])
+    directChat DirectMessage? @relation(fields: [directChatId], references: [id])
+
+    reactions Reaction[]
+}
