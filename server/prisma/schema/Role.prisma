@@ -1,0 +1,10 @@
+model Role {
+    id       Int    @id @default(autoincrement())
+    name     String
+    serverId Int
+
+    server          Server           @relation(fields: [serverId], references: [id])
+    roleAssignments RoleAssignment[]
+
+    channels Channel[] @relation("RoleChannelAccess") // Private channel access for roles
+}

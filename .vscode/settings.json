@@ -3,5 +3,10 @@
         "datasource",
         "Elysia",
         "elysiajs"
-    ]
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit",
+        "source.sortImports": "explicit"
+    }
 }

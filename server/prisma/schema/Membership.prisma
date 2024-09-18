@@ -1,0 +1,11 @@
+model Membership {
+    id       Int      @id @default(autoincrement())
+    userId   Int
+    serverId Int
+    joinedAt DateTime @default(now())
+
+    user   User   @relation(fields: [userId], references: [id])
+    server Server @relation(fields: [serverId], references: [id])
+
+    @@unique([userId, serverId]) // A user can only join a server once
+}
