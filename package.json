@@ -1,0 +1,10 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^9.1.6"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "pretty": "cd ./server && bun run pretty && cd ../client && bun run pretty",
+  }
+}
