@@ -3,4 +3,5 @@ import v1Routes from './v1';
 
 const routes = new Elysia({ prefix: '/api' });
 routes.use(v1Routes);
+routes.get('/ping', () => 'Pong');
 export default routes;

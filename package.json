@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "@elysiajs/jwt": "^1.1.1"
+  },
   "devDependencies": {
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
