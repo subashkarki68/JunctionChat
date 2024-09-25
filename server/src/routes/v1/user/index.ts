@@ -4,6 +4,7 @@ import {
   getUserById,
   getUserByUsername,
 } from '@/controllers/user';
+import { validateUser } from '@/validation/validate';
 import { User } from '@prisma/client';
 import Elysia from 'elysia';
 
@@ -21,9 +22,9 @@ userRoutes.get('/', async () => {
   }
 });
 
-userRoutes.get('id/:id', ({ params: { id } }) => {
+userRoutes.get('id/:id', async ({ params: { id } }) => {
   try {
-    const user = getUserById(Number(id));
+    const user = await getUserById(Number(id));
     return {
       success: true,
       data: user,
@@ -32,9 +33,10 @@ userRoutes.get('id/:id', ({ params: { id } }) => {
     throw new Error(error.message);
   }
 });
-userRoutes.get('un/:username', ({ params: { username } }) => {
+userRoutes.get('un/:username', async ({ params: { username } }) => {
   try {
-    const user = getUserByUsername(username);
+    const user = await getUserByUsername(username);
+    console.log('🚀 ~ userRoutes.get ~ user:', user);
     return {
       success: true,
       data: user,
@@ -45,10 +47,11 @@ userRoutes.get('un/:username', ({ params: { username } }) => {
 });
 
 userRoutes.post('/register', async ({ body }) => {
-  console.log('🚀 ~ userRoutes.post ~ body:', body);
+  // console.log('🚀 ~ userRoutes.post ~ body:', body);
   try {
-    const userData = body as User;
-    await createUser(userData);
+    // const userData = body as User;
+    const userData = await validateUser(body as User);
+    await createUser(userData as User);
     return { success: true, message: 'User registered successfully' };
   } catch (error: any) {
     console.log('🚀 ~ userRoutes.post ~ error:', error);

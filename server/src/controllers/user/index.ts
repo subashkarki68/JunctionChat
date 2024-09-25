@@ -42,10 +42,17 @@ export const getUserByEmail = async (email: string) => {
 
 export const createUser = async (user: User) => {
   try {
-    console.log(user);
+    const existingUser = await prisma.user.findFirst({
+      where: {
+        OR: [{ username: user.username }, { email: user.email }],
+      },
+    });
+    console.log('🚀 ~ createUser ~ existingUser:', existingUser);
+    if (existingUser) {
+      throw new Error('Username already taken');
+    }
     return await prisma.user.create({ data: user });
-  } catch (error: unknown) {
-    // throw error
+  } catch (error: any) {
     console.error('Error creating user: ', error);
     throw new Error('Failed to create user');
   }
